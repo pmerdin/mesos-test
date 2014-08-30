@@ -1,20 +1,9 @@
-
-# a hack to make sure package list is loaded. it can probably be done somehow via apt package, just needs an investigation
-exec { "apt-update":
-    command => "/usr/bin/apt-get update"
-}
-
-Exec['apt-update'] -> Package<| |>
-
-#Class<| title=='mesos::repo' |> {
-class { 'mesos::repo':
-    source => 'mesosphere',
-    before => Exec['apt-update']
-}
+include pmerdin::repo_init
 
 class{'mesos::master':
   master_port => 5050,
   work_dir => '/var/lib/mesos',
+  listen_address => $::ipaddress_eth1, # listen on the static IP
 # options => {
 #    quorum   => 4
 #  },
