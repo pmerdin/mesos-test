@@ -2,7 +2,7 @@ Mesos test repository
 
 ## What is in there?
 
- - `task1` - files related to task1
+ - `task*` - files related to tasks
  - `modules` - common modules imported from the internet (some are modified)
  - `initial_setup.sh` - shell script to set up system to test
 
