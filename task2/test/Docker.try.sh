@@ -1,0 +1,1 @@
+curl -i -H 'Content-Type: application/json' -d @Docker.json localhost:8080/v2/apps
