@@ -26,5 +26,6 @@ class pmerdin::docker () {
     notify  => Service['mesos-slave'],
   }
 
+  docker::image{ 'libmesos/ubuntu': }
 
 }

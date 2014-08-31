@@ -63,7 +63,7 @@ define archive::extract (
         },
         creates => $extract_dir,
         timeout => $timeout,
-	provider => 'shell',
+        provider => 'shell',
       }
     }
     absent: {
