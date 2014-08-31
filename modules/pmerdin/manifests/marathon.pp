@@ -11,8 +11,8 @@ class pmerdin::marathon () {
   exec{ 'compile marathon':
     command => "/usr/bin/sbt assembly && bin/build-distribution",
     creates => '/opt/marathon/target/scala-2.10/marathon-assembly-0.7.0-SNAPSHOT.jar',
-    require => Class['Marathon::Source']
     cwd     => '/opt/marathon',
+    require => Class['Marathon::Source'],
   } -> Service['marathon']
 
 }
